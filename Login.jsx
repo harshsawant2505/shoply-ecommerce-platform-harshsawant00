@@ -1,27 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
 
-/**
- * AuthLogin.jsx
- * Single-file React component for a /auth/login page.
- * - Tailwind CSS for styling
- * - Credential login flow (email + password)
- * - Social login buttons (Google, GitHub) via redirect to OAuth endpoints
- * - Client-side validation + password strength indicator
- * - reCAPTCHA v2/v3 integration (client-side token retrieval)
- * - Session persistence (localStorage + cookie fallback)
- *
- * Usage:
- *  - Place this component on /auth/login route of your React/Next.js app.
- *  - Provide environment variables or replace endpoints:
- *      RECAPTCHA_SITE_KEY (optional) -> will dynamically inject script
- *      /api/auth/login (POST) -> handles credential login, expects {email,password,recaptchaToken}
- *      /api/auth/oauth/:provider (GET) -> redirects to provider login (google, github)
- *
- * Notes:
- *  - This component does not perform server-side validation or verification of reCAPTCHA token.
- *  - On successful login it expects a JSON response with { success: true, token, user }
- *  - Customize endpoints and token handling to match your backend.
- */
 
 const RECAPTCHA_SITE_KEY = process.env.REACT_APP_RECAPTCHA_SITE_KEY || process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "";
 
